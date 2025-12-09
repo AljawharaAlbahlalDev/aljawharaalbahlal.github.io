@@ -66,7 +66,9 @@
     .top-nav {
   display: flex;
   align-items: center;
-  justify-content: space-between; /* يخلي واحد يمين والثاني يسار */
+  justify-content: space-between;
+       gap: 12px;
+      margin-bottom: 28px;
 }
 
     .brand {
@@ -113,7 +115,8 @@
       gap: 14px;
       font-size: 0.82rem;
       color: var(--text-muted);
-
+  flex-wrap: wrap;
+      justify-content: flex-end;
     }
 
 
@@ -567,7 +570,20 @@
 <body>
   <div class="shell">
     <!-- NAVBAR -->
-    <header class="top-nav">
+  <header class="top-nav">
+    
+ <div class="brand"> 
+    <div class="brand-avatar"> 
+      <div class="brand-avatar-inner">
+       <img src="profile.jpeg" alt="Aljawhara" class="avatar-img" /> 
+      </div> 
+    </div> 
+    <div> 
+      <div class="brand-text-main">Aljawhara Albahlal</div> 
+      <div class="brand-text-sub">Software Developer</div>
+    </div> 
+ </div>  
+    
   <nav class="nav-links">
     <a href="#about">About</a>
     <a href="#skills">Skills</a>
@@ -576,23 +592,17 @@
     <a href="#contact">Contact</a>
   </nav>
 
-  <div class="brand">
-    <div class="brand-avatar">
-      <div class="brand-avatar-inner">
-        <img src="profile.jpeg" alt="Aljawhara" class="avatar-img" />
-      </div>
-    </div>
-  </div>
+
+    
 </header>
+
+
+    
 
     
     <!-- HERO -->
     <section class="hero" id="top">
       <div class="hero-top-row">
-        <div class="hero-heading-block">
-          <div class="hero-name">Aljawhara Albahlal</div>
-          <div class="hero-role">Software Developer from Saudi Arabia</div>
-        </div>
         <div class="hero-status">
           <span class="hero-status-dot"></span>
           <span>Available for opportunities</span>
