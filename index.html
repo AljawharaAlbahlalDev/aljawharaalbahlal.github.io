@@ -62,13 +62,12 @@
 
     /* NAVBAR */
 
+
     .top-nav {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 12px;
-      margin-bottom: 28px;
-    }
+  display: flex;
+  align-items: center;
+  justify-content: space-between; /* يخلي واحد يمين والثاني يسار */
+}
 
     .brand {
       display: flex;
@@ -114,9 +113,9 @@
       gap: 14px;
       font-size: 0.82rem;
       color: var(--text-muted);
-      flex-wrap: wrap;
-      justify-content: flex-end;
+
     }
+
 
     .nav-links a {
       padding: 4px 8px;
@@ -569,26 +568,24 @@
   <div class="shell">
     <!-- NAVBAR -->
     <header class="top-nav">
-      <div class="brand">
-        <div class="brand-avatar">
+  <nav class="nav-links">
+    <a href="#about">About</a>
+    <a href="#skills">Skills</a>
+    <a href="#projects">Projects</a>
+    <a href="#articles">Articles</a>
+    <a href="#contact">Contact</a>
+  </nav>
+
+  <div class="brand">
+    <div class="brand-avatar">
       <div class="brand-avatar-inner">
         <img src="profile.jpeg" alt="Aljawhara" class="avatar-img" />
       </div>
-        </div>
-        <div>
-          <div class="brand-text-main">Aljawhara Albahlal</div>
-          <div class="brand-text-sub">Software Developer</div>
-        </div>
-      </div>
-      <nav class="nav-links">
-        <a href="#about">About</a>
-        <a href="#skills">Skills</a>
-        <a href="#projects">Projects</a>
-        <a href="#articles">Articles</a>
-        <a href="#contact">Contact</a>
-      </nav>
-    </header>
+    </div>
+  </div>
+</header>
 
+    
     <!-- HERO -->
     <section class="hero" id="top">
       <div class="hero-top-row">
