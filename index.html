@@ -1,0 +1,525 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <title>Aljawhara Albahlal</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <style>
+    :root {
+      --bg: #0b1020;
+      --card: #111729;
+      --accent: #3b82f6;
+      --accent-soft: rgba(59,130,246,0.12);
+      --text-main: #f9fafb;
+      --text-muted: #9ca3af;
+      --border-subtle: #1f2937;
+      --pill-bg: #020617;
+      --radius-xl: 18px;
+      --radius-full: 999px;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background: radial-gradient(circle at top, #111827, #020617 55%);
+      color: var(--text-main);
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
+      padding: 32px 16px;
+    }
+
+    .page {
+      width: 100%;
+      max-width: 960px;
+      border-radius: 28px;
+      background: linear-gradient(135deg, rgba(15,23,42,0.96), rgba(15,23,42,0.98));
+      border: 1px solid rgba(148,163,184,0.15);
+      box-shadow:
+        0 22px 50px rgba(15,23,42,0.7),
+        0 0 0 1px rgba(15,23,42,0.9);
+      padding: 24px 22px 26px;
+      display: grid;
+      grid-template-columns: minmax(0, 1.15fr) minmax(0, 1fr);
+      gap: 26px;
+    }
+
+    @media (max-width: 800px) {
+      .page {
+        grid-template-columns: 1fr;
+        padding: 20px 18px 22px;
+      }
+    }
+
+    /* Top bar */
+    .top-bar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 18px;
+      gap: 12px;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .avatar {
+      width: 40px;
+      height: 40px;
+      border-radius: 14px;
+      background: radial-gradient(circle at 30% 0, #38bdf8, #6366f1 33%, #ec4899 66%, #f97316);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .avatar::after {
+      content: "A";
+      position: absolute;
+      inset: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 700;
+      font-size: 20px;
+      color: rgba(15,23,42,0.9);
+    }
+
+    .brand-text {
+      display: flex;
+      flex-direction: column;
+      gap: 2px;
+    }
+
+    .brand-name {
+      font-size: 15px;
+      font-weight: 600;
+      letter-spacing: 0.01em;
+    }
+
+    .brand-role {
+      font-size: 12px;
+      color: var(--text-muted);
+    }
+
+    .lang-switch {
+      display: inline-flex;
+      padding: 3px;
+      border-radius: var(--radius-full);
+      background: rgba(15,23,42,0.9);
+      border: 1px solid rgba(75,85,99,0.7);
+      gap: 2px;
+    }
+
+    .lang-btn {
+      border: none;
+      padding: 5px 10px;
+      border-radius: 999px;
+      font-size: 12px;
+      cursor: pointer;
+      background: transparent;
+      color: var(--text-muted);
+      min-width: 40px;
+    }
+
+    .lang-btn.active {
+      background: var(--accent);
+      color: white;
+    }
+
+    /* Columns */
+    .col {
+      display: flex;
+      flex-direction: column;
+      gap: 18px;
+    }
+
+    /* Cards */
+    .card {
+      background: radial-gradient(circle at top left, rgba(59,130,246,0.18), rgba(15,23,42,0.9));
+      border-radius: var(--radius-xl);
+      padding: 18px 18px 18px;
+      border: 1px solid rgba(148,163,184,0.28);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .card::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(circle at top right, rgba(56,189,248,0.09), transparent 60%);
+      opacity: 0.9;
+      pointer-events: none;
+    }
+
+    .card-inner {
+      position: relative;
+      z-index: 1;
+    }
+
+    .pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 4px 10px;
+      border-radius: 999px;
+      background: rgba(15,23,42,0.85);
+      border: 1px solid rgba(55,65,81,0.9);
+      font-size: 11px;
+      color: var(--text-muted);
+      margin-bottom: 10px;
+    }
+
+    .pill-dot {
+      width: 7px;
+      height: 7px;
+      border-radius: 999px;
+      background: #22c55e;
+      box-shadow: 0 0 10px rgba(34,197,94,0.7);
+    }
+
+    .pill-kicker {
+      font-size: 11px;
+      color: #93c5fd;
+    }
+
+    .hero-title {
+      font-size: 24px;
+      line-height: 1.3;
+      margin-bottom: 8px;
+    }
+
+    .hero-sub {
+      font-size: 14px;
+      color: var(--text-muted);
+      max-width: 32rem;
+    }
+
+    .hero-sub strong {
+      color: #e5e7eb;
+      font-weight: 500;
+    }
+
+    .chips {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 14px;
+    }
+
+    .chip {
+      font-size: 11px;
+      padding: 5px 9px;
+      border-radius: 999px;
+      background: var(--pill-bg);
+      border: 1px solid rgba(75,85,99,0.8);
+      color: var(--text-muted);
+    }
+
+    /* Section Titles */
+    .section-title {
+      font-size: 13px;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      color: var(--text-muted);
+      margin-bottom: 8px;
+    }
+
+    .section-body {
+      font-size: 13px;
+      color: #e5e7eb;
+      line-height: 1.7;
+    }
+
+    .section-body strong {
+      font-weight: 600;
+      color: #ffffff;
+    }
+
+    .list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      margin-top: 6px;
+    }
+
+    .list li {
+      font-size: 13px;
+      color: var(--text-muted);
+    }
+
+    .list li span {
+      color: #e5e7eb;
+    }
+
+    /* Tags / skills */
+    .tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+      margin-top: 8px;
+    }
+
+    .tag {
+      font-size: 11px;
+      padding: 4px 9px;
+      border-radius: 999px;
+      border: 1px solid rgba(148,163,184,0.5);
+      background: rgba(15,23,42,0.9);
+      color: #e5e7eb;
+      white-space: nowrap;
+    }
+
+    /* Links */
+    .links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 10px;
+    }
+
+    .link-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 7px;
+      font-size: 12px;
+      padding: 7px 11px;
+      border-radius: 999px;
+      border: 1px solid rgba(148,163,184,0.5);
+      background: rgba(15,23,42,0.95);
+      text-decoration: none;
+      color: #e5e7eb;
+    }
+
+    .link-pill span.icon {
+      font-size: 13px;
+      opacity: 0.9;
+    }
+
+    .link-pill:hover {
+      border-color: var(--accent);
+    }
+
+    /* Footer */
+    .footer {
+      font-size: 11px;
+      color: var(--text-muted);
+      margin-top: 8px;
+      text-align: left;
+      opacity: 0.9;
+    }
+
+    [dir="rtl"] .footer {
+      text-align: right;
+    }
+
+    /* Language handling */
+    .lang-ar { display: none; }
+    .lang-en { display: none; }
+
+    body.lang-ar .lang-ar { display: block; }
+    body.lang-en .lang-en { display: block; }
+
+    body.lang-ar {
+      direction: rtl;
+    }
+    body.lang-en {
+      direction: ltr;
+    }
+
+    @media (max-width: 500px) {
+      .hero-title {
+        font-size: 20px;
+      }
+      .page {
+        border-radius: 20px;
+      }
+    }
+  </style>
+</head>
+<body class="lang-en">
+  <div class="page">
+    <!-- LEFT COLUMN -->
+    <div class="col">
+      <div class="top-bar">
+        <div class="brand">
+          <div class="avatar"></div>
+          <div class="brand-text">
+            <div class="brand-name">Aljawhara Albahlal</div>
+            <div class="brand-role lang-en">Software & AI Developer</div>
+            <div class="brand-role lang-ar">مطور نظم وذكاء اصطناعي</div>
+          </div>
+        </div>
+        <div class="lang-switch" aria-label="Language switch">
+          <button class="lang-btn active" data-lang="en">EN</button>
+          <button class="lang-btn" data-lang="ar">AR</button>
+        </div>
+      </div>
+
+      <!-- HERO CARD -->
+      <section class="card">
+        <div class="card-inner">
+          <div class="pill">
+            <span class="pill-dot"></span>
+            <span class="pill-kicker lang-en">Available for opportunities</span>
+            <span class="pill-kicker lang-ar">متاحة لفرص جديدة</span>
+          </div>
+
+          <h1 class="hero-title lang-en">
+            Building clean, thoughtful software for people — not just machines.
+          </h1>
+          <h1 class="hero-title lang-ar">
+            أصمّم برمجيات واضحة وبسيطة تخدم الناس قبل أن تخدم الآلة.
+          </h1>
+
+          <p class="hero-sub lang-en">
+            I’m a <strong>software developer & AI enthusiast</strong> from Saudi Arabia,
+            working with C#, Angular, and AI agents to turn complex systems into
+            smooth, human-friendly experiences.
+          </p>
+          <p class="hero-sub lang-ar">
+            أنا <strong>مطور نظم ومهتمة بالذكاء الاصطناعي</strong> من السعودية،
+            أعمل على C# و Angular ووكـلاء الذكاء الاصطناعي لتحويل الأنظمة المعقدة
+            إلى تجارب بسيطة وسلسة للمستخدم.
+          </p>
+
+          <div class="chips">
+            <div class="chip">C# / .NET / ABP</div>
+            <div class="chip">Angular</div>
+            <div class="chip">AI Agents & n8n</div>
+            <div class="chip">Cloud & Automation</div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ABOUT -->
+      <section class="card" style="background: #020617;">
+        <div class="card-inner">
+          <div class="section-title lang-en">Overview</div>
+          <div class="section-title lang-ar">نبذة</div>
+
+          <p class="section-body lang-en">
+            I enjoy designing systems that feel <strong>predictable, reliable, and calm</strong>.
+            My work usually lives somewhere between backend logic, clean APIs, and
+            front-end experiences that respect the user’s time.
+          </p>
+          <p class="section-body lang-ar">
+            أحب بناء أنظمة تكون <strong>واضحة، موثوقة، وهادئة</strong>.
+            أتنقل غالبًا بين منطق الـ Backend، الـ APIs النظيفة، وتجارب الواجهات
+            الأمامية التي تحترم وقت المستخدم.
+          </p>
+        </div>
+      </section>
+    </div>
+
+    <!-- RIGHT COLUMN -->
+    <div class="col">
+
+      <!-- SKILLS -->
+      <section class="card" style="background: #020617;">
+        <div class="card-inner">
+          <div class="section-title lang-en">Skills</div>
+          <div class="section-title lang-ar">المهارات</div>
+
+          <div class="tags">
+            <span class="tag">C#, .NET</span>
+            <span class="tag">ABP Framework</span>
+            <span class="tag">Entity Framework</span>
+            <span class="tag">Angular & TypeScript</span>
+            <span class="tag">REST APIs</span>
+            <span class="tag">SQL</span>
+            <span class="tag">n8n Workflows</span>
+            <span class="tag">AI Agents</span>
+          </div>
+        </div>
+      </section>
+
+      <!-- PROJECTS / FOCUS -->
+      <section class="card">
+        <div class="card-inner">
+          <div class="section-title lang-en">Current focus</div>
+          <div class="section-title lang-ar">ما أعمل عليه الآن</div>
+
+          <ul class="list lang-en">
+            <li><span>Designing agentic AI flows for government-like services (Absher-style journeys).</span></li>
+            <li><span>Improving backend architecture with clean rules and business logic.</span></li>
+            <li><span>Building small tools that automate repetitive work for teams.</span></li>
+          </ul>
+
+          <ul class="list lang-ar">
+            <li><span>تصميم تدفقات ذكاء اصطناعي توكيلي لخدمات حكومية شبيهة بأبشر.</span></li>
+            <li><span>تحسين بنية الـ Backend بقواعد عمل واضحة ومنطق منظم.</span></li>
+            <li><span>بناء أدوات صغيرة لأتمتة المهام المتكررة لفرق العمل.</span></li>
+          </ul>
+        </div>
+      </section>
+
+      <!-- CONTACT -->
+      <section class="card" style="background: #020617;">
+        <div class="card-inner">
+          <div class="section-title lang-en">Contact</div>
+          <div class="section-title lang-ar">تواصل</div>
+
+          <p class="section-body lang-en">
+            If you’d like to talk about work, ideas, or experiments with AI and automation,
+            feel free to reach out:
+          </p>
+          <p class="section-body lang-ar">
+            لو حاب/ـة نتكلم عن العمل، الأفكار، أو تجارب الذكاء الاصطناعي والأتمتة،
+            تقدر تتواصل معي عبر:
+          </p>
+
+          <div class="links">
+            <a class="link-pill" href="mailto:aljawharaalbahlal@gmail.com">
+              <span class="icon">✉️</span>
+              <span>aljawharaalbahlal@gmail.com</span>
+            </a>
+            <a class="link-pill" href="https://www.linkedin.com/in/aljawharaalbahlal" target="_blank">
+              <span class="icon">💼</span>
+              <span>LinkedIn</span>
+            </a>
+            <a class="link-pill" href="https://github.com/YOUR-NEW-USERNAME" target="_blank">
+              <span class="icon">💻</span>
+              <span>GitHub</span>
+            </a>
+          </div>
+
+          <div class="footer lang-en">
+            This is a small personal site hosted on GitHub Pages.
+          </div>
+          <div class="footer lang-ar">
+            هذا موقع شخصي بسيط مستضاف على GitHub Pages.
+          </div>
+        </div>
+      </section>
+    </div>
+  </div>
+
+  <script>
+    const btns = document.querySelectorAll(".lang-btn");
+    const body = document.body;
+
+    function setLang(lang) {
+      body.classList.remove("lang-ar", "lang-en");
+      body.classList.add("lang-" + lang);
+      btns.forEach(b => b.classList.toggle("active", b.dataset.lang === lang));
+    }
+
+    btns.forEach(btn => {
+      btn.addEventListener("click", () => setLang(btn.dataset.lang));
+    });
+
+    // default EN
+    setLang("en");
+  </script>
+</body>
+</html>
