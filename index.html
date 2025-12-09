@@ -48,6 +48,33 @@
       text-decoration: none;
     }
 
+    .github-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 6px 12px;
+      border-radius: 8px;
+      background: #111; /* GitHub black */
+      color: #fff;
+      font-size: 0.8rem;
+      font-weight: 500;
+      text-decoration: none;
+      border: 1px solid #222;
+      transition: background 0.2s ease, transform 0.1s ease;
+    }
+    
+    .github-btn:hover {
+      background: #000;
+      transform: translateY(-1px);
+    }
+    
+    .github-icon {
+      width: 16px;
+      height: 16px;
+      fill: #fff;
+    }
+
+    
     /* Layout */
 
     .shell {
@@ -644,51 +671,208 @@
     </section>
 
     <!-- PROJECTS -->
-    <section class="section" id="projects">
-      <div class="section-header">
-        <div class="section-kicker">Projects</div>
-        <div class="section-title">Things I’ve built or helped build</div>
+<section class="section" id="projects">
+  <div class="section-header">
+    <div class="section-kicker">Projects</div>
+    <div class="section-title">Things I’ve built or helped build</div>
+  </div>
+
+  <div class="section-body">
+
+    <!-- Absher AI Agent -->
+    <div class="item">
+      <div class="item-title">Absher AI Agent — Smart Government Assistant (MVP)</div>
+      <div class="item-sub">Agentic AI flow for government digital services</div>
+      <ul>
+        <li>Understands user intent from natural language (e.g. renewals, bookings).</li>
+        <li>Collects missing details step-by-step through a guided conversation.</li>
+        <li>Sends structured actions through <strong>n8n workflows</strong> and webhooks.</li>
+        <li>Designed with a <strong>human-in-the-loop</strong> for sensitive operations and data.</li>
+      </ul>
+    </div>
+
+    <div class="divider"></div>
+
+    <!-- Manpower Planning -->
+    <div class="item">
+      <div class="item-title">Manpower Planning — NCGR Internal System</div>
+      <div class="item-sub">Backend &amp; frontend modules for government-scale workforce planning</div>
+      <ul>
+        <li>Implemented features using C#, .NET, EF Core, ABP Framework, and Angular.</li>
+        <li>Built and optimized APIs, business rules, UI flows, and Excel automation tools.</li>
+        <li>Improved system reliability, validations, and user experience in production.</li>
+      </ul>
+    </div>
+
+    <div class="divider"></div>
+
+    <!-- ICES2023 App -->
+    <div class="item">
+      <div class="item-title">ICES2023 — Conference Application</div>
+      <div class="item-sub">
+        Developed an application for ICES2023, held at King Saud University in Riyadh, Saudi Arabia.
       </div>
-      <div class="section-body">
-        <div class="item">
-          <div class="item-title">Absher AI Agent — Smart Government Assistant (MVP)</div>
-          <div class="item-sub">Agentic AI flow for government-like digital services</div>
-          <ul>
-            <li>Understands user intent from natural language (e.g. renewals, bookings).</li>
-            <li>Collects missing details step-by-step with a guided conversation.</li>
-            <li>Sends structured actions through <strong>n8n workflows</strong> and webhooks.</li>
-            <li>Designed with a <strong>human-in-the-loop</strong> for sensitive operations and data.</li>
-          </ul>
-          <div class="pill-list">
-            <span class="pill">n8n</span>
-            <span class="pill">AI Agents</span>
-            <span class="pill">Webhooks</span>
-            <span class="pill">C# / APIs</span>
-          </div>
-        </div>
+      <ul>
+        <li>Built an app experience tailored to conference attendees and event needs.</li>
+        <li>Focused on clarity, usability, and supporting the conference journey.</li>
+      </ul>
+<a class="github-btn" href="https://github.com/AljawharaAlbahlalDev/ICES2023" target="_blank" rel="noreferrer">
+  <svg class="github-icon" viewBox="0 0 16 16">
+    <path
+      d="M8 0C3.58 0 0 3.58 0 8c0 3.54 
+      2.29 6.53 5.47 7.59.4.07.55-.17.55-.38
+      0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49
+      -2.69-.94-.09-.23-.48-.94-.82-1.13-.28
+      -.15-.68-.52-.01-.53.63-.01 1.08.58 
+      1.23.82.72 1.21 1.87.87 2.33.66.07 
+      -.52.28-.87.51-1.07-1.78-.2-3.64-.89
+      -3.64-3.95 0-.87.31-1.59.82-2.15-.08
+      -.2-.36-1.02.08-2.12 0 0 .67-.21 
+      2.2.82.64-.18 1.32-.27 2-.27.68 0 
+      1.36.09 2 .27 1.53-1.04 2.2-.82 
+      2.2-.82.44 1.1.16 1.92.08 2.12.51 
+      .56.82 1.27.82 2.15 0 3.07-1.87 
+      3.75-3.65 3.95.29.25.54.73.54 1.48
+      0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 
+      8.013 0 0 0 16 8c0-4.42-3.58-8-8-8z">
+    </path>
+  </svg>
+  View Repo
+</a>
+    </div>
 
-        <div class="divider"></div>
+    <div class="divider"></div>
 
-        <div class="item">
-          <div class="item-title">Cart To Go — IoT Graduation Project</div>
-          <div class="item-sub">
-            IoT-based smart cart system connected to an iOS mobile application.
-          </div>
-          <ul>
-            <li>Implemented backend logic and communication between devices and app.</li>
-          </ul>
-        </div>
-
-        <div class="item">
-          <div class="item-title">A Meal for You — Food Donation Platform</div>
-          <div class="item-sub">Online web application that connects donors with organizations.</div>
-          <ul>
-            <li>Contributed to full-stack implementation of the donation workflow.</li>
-          </ul>
-        </div>
+    <!-- Smart Hiker GA -->
+    <div class="item">
+      <div class="item-title">Smart Hiker Backpacking Using GA Optimization</div>
+      <div class="item-sub">
+        AI-driven Genetic Algorithm program that helps hikers customize item lists for backpacking.
       </div>
-    </section>
+      <ul>
+        <li>Uses GA optimization to balance weight, utility, and user preferences.</li>
+        <li>Generates optimal packing lists based on user needs.</li>
+      </ul>
+<a class="github-btn" href="https://github.com/AljawharaAlbahlalDev/SmartHikerBackpacking" target="_blank" rel="noreferrer">
+  <svg class="github-icon" viewBox="0 0 16 16">
+    <path
+      d="M8 0C3.58 0 0 3.58 0 8c0 3.54 
+      2.29 6.53 5.47 7.59.4.07.55-.17.55-.38
+      0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49
+      -2.69-.94-.09-.23-.48-.94-.82-1.13-.28
+      -.15-.68-.52-.01-.53.63-.01 1.08.58 
+      1.23.82.72 1.21 1.87.87 2.33.66.07 
+      -.52.28-.87.51-1.07-1.78-.2-3.64-.89
+      -3.64-3.95 0-.87.31-1.59.82-2.15-.08
+      -.2-.36-1.02.08-2.12 0 0 .67-.21 
+      2.2.82.64-.18 1.32-.27 2-.27.68 0 
+      1.36.09 2 .27 1.53-1.04 2.2-.82 
+      2.2-.82.44 1.1.16 1.92.08 2.12.51 
+      .56.82 1.27.82 2.15 0 3.07-1.87 
+      3.75-3.65 3.95.29.25.54.73.54 1.48
+      0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 
+      8.013 0 0 0 16 8c0-4.42-3.58-8-8-8z">
+    </path>
+  </svg>
+  View Repo
+</a>
+    </div>
 
+    <div class="divider"></div>
+
+    <!-- Cart To Go -->
+    <div class="item">
+      <div class="item-title">Cart To Go</div>
+      <div class="item-sub">
+        IoT-based smart cart connected to an iOS mobile application.
+      </div>
+      <ul>
+        <li>Designed to reduce waiting time in supermarket queues.</li>
+        <li>Allows scanning product barcodes while shopping.</li>
+        <li>Displays item prices and totals on LCD + iOS app.</li>
+      </ul>
+<a class="github-btn" href="https://github.com/AljawharaAlbahlalDev/2022-GP2-04" target="_blank" rel="noreferrer">
+  <svg class="github-icon" viewBox="0 0 16 16">
+    <path
+      d="M8 0C3.58 0 0 3.58 0 8c0 3.54 
+      2.29 6.53 5.47 7.59.4.07.55-.17.55-.38
+      0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49
+      -2.69-.94-.09-.23-.48-.94-.82-1.13-.28
+      -.15-.68-.52-.01-.53.63-.01 1.08.58 
+      1.23.82.72 1.21 1.87.87 2.33.66.07 
+      -.52.28-.87.51-1.07-1.78-.2-3.64-.89
+      -3.64-3.95 0-.87.31-1.59.82-2.15-.08
+      -.2-.36-1.02.08-2.12 0 0 .67-.21 
+      2.2.82.64-.18 1.32-.27 2-.27.68 0 
+      1.36.09 2 .27 1.53-1.04 2.2-.82 
+      2.2-.82.44 1.1.16 1.92.08 2.12.51 
+      .56.82 1.27.82 2.15 0 3.07-1.87 
+      3.75-3.65 3.95.29.25.54.73.54 1.48
+      0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 
+      8.013 0 0 0 16 8c0-4.42-3.58-8-8-8z">
+    </path>
+  </svg>
+  View Repo
+</a>
+    </div>
+
+    <div class="divider"></div>
+
+    <!-- A Meal for You -->
+    <div class="item">
+      <div class="item-title">A Meal for You</div>
+      <div class="item-sub">
+        Web application for food donation where restaurants list leftover meals.
+      </div>
+      <ul>
+        <li>Allows restaurants to post end-of-day meals.</li>
+        <li>Enables recipients to browse and reserve meals.</li>
+        <li>Helps reduce food waste and support communities in need.</li>
+      </ul>
+      <a class="github-btn" href="https://github.com/AljawharaAlbahlalDev/AMealforYou" target="_blank" rel="noreferrer">
+        <svg class="github-icon" viewBox="0 0 16 16">
+          <path
+            d="M8 0C3.58 0 0 3.58 0 8c0 3.54 
+            2.29 6.53 5.47 7.59.4.07.55-.17.55-.38
+            0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49
+            -2.69-.94-.09-.23-.48-.94-.82-1.13-.28
+            -.15-.68-.52-.01-.53.63-.01 1.08.58 
+            1.23.82.72 1.21 1.87.87 2.33.66.07 
+            -.52.28-.87.51-1.07-1.78-.2-3.64-.89
+            -3.64-3.95 0-.87.31-1.59.82-2.15-.08
+            -.2-.36-1.02.08-2.12 0 0 .67-.21 
+            2.2.82.64-.18 1.32-.27 2-.27.68 0 
+            1.36.09 2 .27 1.53-1.04 2.2-.82 
+            2.2-.82.44 1.1.16 1.92.08 2.12.51 
+            .56.82 1.27.82 2.15 0 3.07-1.87 
+            3.75-3.65 3.95.29.25.54.73.54 1.48
+            0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 
+            8.013 0 0 0 16 8c0-4.42-3.58-8-8-8z">
+          </path>
+        </svg>
+        View Repo
+      </a>
+    </div>
+
+    <div class="divider"></div>
+
+    <!-- Grow -->
+    <div class="item">
+      <div class="item-title">Grow</div>
+      <div class="item-sub">
+        UI design for a plant-care app that helps users care for their plants.
+      </div>
+      <ul>
+        <li>Reminds users to water plants on time.</li>
+        <li>Allows searching plants and learning care instructions.</li>
+        <li>Concept for plant detection using device camera.</li>
+      </ul>
+    </div>
+
+  </div>
+</section>
+
+    
     <!-- ARTICLES -->
 <section class="section" id="articles">
   <div class="section-header">
@@ -743,7 +927,29 @@
             <span>LinkedIn</span>
           </a>
           <a class="contact-chip" href="https://github.com/AljawharaAlbahlalDev" target="_blank" rel="noreferrer">
-            <span class="icon">💻</span>
+            <span class="icon">
+
+           <svg class="github-icon" viewBox="0 0 16 16">
+          <path
+            d="M8 0C3.58 0 0 3.58 0 8c0 3.54 
+            2.29 6.53 5.47 7.59.4.07.55-.17.55-.38
+            0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49
+            -2.69-.94-.09-.23-.48-.94-.82-1.13-.28
+            -.15-.68-.52-.01-.53.63-.01 1.08.58 
+            1.23.82.72 1.21 1.87.87 2.33.66.07 
+            -.52.28-.87.51-1.07-1.78-.2-3.64-.89
+            -3.64-3.95 0-.87.31-1.59.82-2.15-.08
+            -.2-.36-1.02.08-2.12 0 0 .67-.21 
+            2.2.82.64-.18 1.32-.27 2-.27.68 0 
+            1.36.09 2 .27 1.53-1.04 2.2-.82 
+            2.2-.82.44 1.1.16 1.92.08 2.12.51 
+            .56.82 1.27.82 2.15 0 3.07-1.87 
+            3.75-3.65 3.95.29.25.54.73.54 1.48
+            0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 
+            8.013 0 0 0 16 8c0-4.42-3.58-8-8-8z">
+          </path>
+        </svg>
+              </span>
             <span>GitHub</span>
           </a>
         </div>
