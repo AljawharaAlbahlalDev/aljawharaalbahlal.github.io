@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Backend Developer Roadmap — C#, .NET & ABP</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <style>
+    body {
+      font-family: system-ui, sans-serif;
+      background: #0b1120;
+      color: #e5e7eb;
+      padding: 30px;
+      line-height: 1.7;
+    }
+
+    .card {
+      max-width: 780px;
+      margin: auto;
+      background: #050816;
+      padding: 26px 30px;
+      border-radius: 16px;
+      border: 1px solid rgba(148,163,184,0.22);
+      box-shadow: 0 10px 30px rgba(0,0,0,0.35);
+    }
+
+    h1 { font-size: 1.8rem; margin-bottom: 14px; }
+    h2 { font-size: 1.3rem; margin-top: 22px; color: #93c5fd; }
+    h3 { font-size: 1.1rem; margin-top: 16px; color: #38bdf8; }
+    p { margin-bottom: 14px; color: #cbd5e1; }
+    ul { margin-bottom: 14px; padding-left: 18px; }
+    li { margin-bottom: 6px; }
+
+  </style>
+</head>
+<body>
+
+<div class="card">
+
+  <h1>Backend Developer Roadmap — C#, .NET & ABP (For Juniors)</h1>
+
+  <p>
+    Starting as a backend developer can feel overwhelming — especially in enterprise environments that use frameworks like <strong>ABP</strong>, large databases, layered architecture, and dozens of moving parts.  
+    This roadmap gives junior developers a clear, practical path to grow from fundamentals to production-ready backend skills.
+  </p>
+
+  <h2>1. Master the Core of C#</h2>
+  <p>Every strong backend career starts with solid C# fundamentals:</p>
+  <ul>
+    <li>OOP (classes, interfaces, inheritance, abstraction)</li>
+    <li>Collections & LINQ</li>
+    <li>Async / Await and Task-based programming</li>
+    <li>Error handling & exceptions</li>
+    <li>Dependency Injection basics</li>
+  </ul>
+
+  <h3>Why it matters</h3>
+  <p>
+    In ABP and .NET enterprise projects, clean architecture relies heavily on interfaces, services, and DI — so mastering these early makes development smoother.
+  </p>
+
+  <h2>2. Learn .NET Fundamentals</h2>
+  <ul>
+    <li>Building Web APIs</li>
+    <li>Controllers, routing, DTOs, and model binding</li>
+    <li>Middleware pipeline</li>
+    <li>Configuration (appsettings.json)</li>
+    <li>Authentication & Authorization basics</li>
+  </ul>
+
+  <h3>Why it matters</h3>
+  <p>
+    ABP builds on top of ASP.NET Core, so understanding Web API fundamentals helps you debug and extend ABP modules confidently.
+  </p>
+
+  <h2>3. EF Core & Database Skills</h2>
+  <p>Key skills every junior needs:</p>
+  <ul>
+    <li>DbContext & DbSet</li>
+    <li>Migrations</li>
+    <li>Navigation properties</li>
+    <li>Eager vs Lazy loading</li>
+    <li>LINQ queries and performance awareness</li>
+  </ul>
+
+  <h3>Why it matters</h3>
+  <p>
+    Most backend bugs come from database issues.  
+    Understanding EF Core well makes you faster and more reliable in production environments.
+  </p>
+
+  <h2>4. ABP Framework — What to Learn</h2>
+  <p>ABP has a learning curve, but these core concepts get you 80% of the way:</p>
+  <ul>
+    <li>Layers: Domain → Application → Http API</li>
+    <li>Repositories & Unit of Work</li>
+    <li>DDD Entities & Value Objects</li>
+    <li>Application Services & DTO mapping</li>
+    <li>Business Rules & Validation</li>
+    <li>Background jobs & distributed events</li>
+  </ul>
+
+  <h3>Why it matters</h3>
+  <p>ABP is used in many government-scale systems because it enforces clean structure and consistency.  
+     Mastering ABP makes you stand out as a backend engineer.</p>
+
+  <h2>5. Clean Architecture Thinking</h2>
+  <ul>
+    <li>Keep business rules in the Domain</li>
+    <li>Keep application logic in Application Services</li>
+    <li>Avoid putting logic in controllers</li>
+    <li>Use DTOs — never expose entities</li>
+    <li>Separate read/write operations (CQRS mindset is helpful)</li>
+  </ul>
+
+  <h2>6. Testing Basics</h2>
+  <p>Start simple:</p>
+  <ul>
+    <li>Unit tests for business rules</li>
+    <li>API tests for controllers</li>
+    <li>Mocking repositories</li>
+  </ul>
+
+  <h2>7. DevOps Skills to Grow Into</h2>
+  <ul>
+    <li>Git fundamentals (branching, merging, PRs)</li>
+    <li>CI/CD basics</li>
+    <li>Docker fundamentals</li>
+    <li>Monitoring & logs (Serilog, Elastic, etc.)</li>
+  </ul>
+
+  <h2>8. How to Practice & Improve</h2>
+  <ul>
+    <li>Build small APIs (Tasks, Notes, Bookings)</li>
+    <li>Experiment with ABP templates</li>
+    <li>Clone an existing system structure and rebuild it</li>
+    <li>Read clean code from open-source .NET projects</li>
+  </ul>
+
+  <h2>Final Advice</h2>
+  <p>
+    Don’t try to learn everything at once.  
+    Growing as a backend developer is about <strong>layers of depth</strong>, not speed.  
+    Focus on understanding, not memorizing — and build real things.
+  </p>
+
+  <p style="color: #94a3b8; margin-top: 18px;">
+    This roadmap will continue evolving as I share more lessons from real-world .NET and ABP development.
+  </p>
+
+</div>
+
+</body>
+</html>
