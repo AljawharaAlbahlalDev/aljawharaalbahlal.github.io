@@ -7,97 +7,145 @@
   <style>
     body {
       font-family: system-ui, sans-serif;
-      background: #030712;
+      background: #0b1120;
       color: #e5e7eb;
       padding: 30px 20px;
-      line-height: 1.8;
+      line-height: 1.7;
     }
-    .container {
-      max-width: 750px;
+
+    .card {
+      max-width: 780px;
       margin: 0 auto;
+      background: #050816;
+      padding: 26px 30px;
+      border-radius: 16px;
+      border: 1px solid rgba(148,163,184,0.22);
+      box-shadow: 0 10px 30px rgba(0,0,0,0.35);
     }
+
     a {
       color: #38bdf8;
       text-decoration: none;
     }
+
     .back {
       display: inline-block;
-      margin-bottom: 20px;
+      margin-bottom: 18px;
       font-size: 0.9rem;
-      opacity: 0.8;
+      opacity: 0.85;
     }
+
     h1 {
-      font-size: 2rem;
+      font-size: 1.9rem;
       font-weight: 700;
       margin-bottom: 10px;
     }
+
+    h2 {
+      font-size: 1.3rem;
+      margin-top: 24px;
+      margin-bottom: 8px;
+      color: #93c5fd;
+    }
+
     .meta {
       font-size: 0.9rem;
       color: #9ca3af;
-      margin-bottom: 26px;
+      margin-bottom: 20px;
     }
+
     p {
-      margin-bottom: 18px;
-      font-size: 1.05rem;
+      margin-bottom: 16px;
+      font-size: 1.02rem;
       color: #d1d5db;
     }
+
+    ul {
+      margin-bottom: 16px;
+      padding-left: 22px;
+    }
+
+    li {
+      margin-bottom: 6px;
+    }
+
     .divider {
       height: 1px;
       background: rgba(148, 163, 184, 0.25);
-      margin: 30px 0;
+      margin: 26px 0 18px;
     }
   </style>
 </head>
 
 <body>
-  <div class="container">
+  <div class="card">
+
     <a class="back" href="index.html">← Back</a>
 
     <h1>Building Scalable .NET Backends: Lessons Learned</h1>
     <div class="meta">Article · By Aljawhara Albahlal</div>
 
     <p>
-      Scaling backend systems is not just about adding more servers — it's about understanding how the
-      architecture behaves as the system grows. Through real-world .NET development, I've learned several
-      practical lessons that help build more reliable and scalable systems.
+      Scaling backend systems is not just about adding more servers — it's about understanding how
+      your architecture behaves as real-world demands grow. Through hands-on .NET development,
+      I’ve learned several practical lessons that make backend systems more reliable, maintainable,
+      and ready for scale.
     </p>
 
     <h2>1. Clean, Modular Architecture</h2>
     <p>
-      A scalable backend begins with clean structure:
-      separation of concerns, modular services, and predictable layers make your system easier to maintain
-      and extend as requirements increase.
+      A scalable backend starts with clean structure.
+      When responsibilities are separated and modules are well-defined, the system becomes
+      easier to extend and debug. Features grow without creating chaos.
     </p>
 
     <h2>2. Think in Workflows, Not Endpoints</h2>
     <p>
-      Designing based on business workflows rather than one-endpoint-per-feature reduces duplication and improves clarity.
+      Instead of designing isolated endpoints for each feature, think of the entire business workflow.
+      This approach reduces duplication, improves clarity, and ensures consistency across the system.
     </p>
 
     <h2>3. Using Entity Framework Core Properly</h2>
+    <p>EF Core is powerful — but it must be used intentionally:</p>
+
+    <ul>
+      <li>Avoid N+1 queries</li>
+      <li>Apply indexing on frequently filtered columns</li>
+      <li>Use pagination (Skip/Take) for large result sets</li>
+      <li>Choose loading strategies wisely (Include vs Select)</li>
+    </ul>
+
     <p>
-      EF Core is powerful, but requires:
-      <br />• avoiding N+1 queries  
-      <br />• indexing  
-      <br />• pagination  
-      <br />• smart loading strategies  
+      Small improvements in EF usage can dramatically improve performance under load.
     </p>
 
     <h2>4. Validation at Multiple Layers</h2>
     <p>
-      Scalable systems use layered validation:
-      request validation, domain rules, and database constraints all play a part in protecting data integrity.
+      A scalable system protects itself with layered validation:
+    </p>
+
+    <ul>
+      <li><strong>Request validation</strong> — catching incorrect input early</li>
+      <li><strong>Domain rules</strong> — ensuring business logic remains correct</li>
+      <li><strong>Database constraints</strong> — preventing invalid data from being stored</li>
+    </ul>
+
+    <p>
+      These layers work together to maintain integrity at scale.
     </p>
 
     <h2>5. Logging and Monitoring</h2>
     <p>
-      A system you cannot measure is a system you cannot scale. Invest early in structured logs, metrics, and traceability.
+      You can’t scale what you can’t observe.
+      Invest early in structured logs, metrics, and traceability.
+      Good observability reduces debugging time dramatically and helps detect issues before users do.
     </p>
 
     <h2>Conclusion</h2>
     <p>
-      Scalability is a mindset: clean design, workflow thinking, smart EF usage, and solid observability
-      produce .NET backends that are prepared for real-world growth.
+      Scalability is ultimately a mindset: clean architecture, workflow thinking,
+      intentional EF Core usage, and strong observability.
+      Together, they create .NET backends that are ready for real-world growth.
     </p>
 
     <div class="divider"></div>
