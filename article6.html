@@ -24,12 +24,11 @@
     }
 
     h1 { font-size: 1.8rem; margin-bottom: 14px; }
-    h2 { font-size: 1.3rem; margin-top: 22px; color: #93c5fd; }
+    h2 { font-size: 1.3rem; margin-top: 26px; color: #93c5fd; }
     h3 { font-size: 1.1rem; margin-top: 16px; color: #38bdf8; }
     p { margin-bottom: 14px; color: #cbd5e1; }
     ul { margin-bottom: 14px; padding-left: 18px; }
     li { margin-bottom: 6px; }
-
   </style>
 </head>
 <body>
@@ -39,10 +38,12 @@
   <h1>Backend Developer Roadmap — C#, .NET & ABP (For Juniors)</h1>
 
   <p>
-    Starting as a backend developer can feel overwhelming — especially in enterprise environments that use frameworks like <strong>ABP</strong>, large databases, layered architecture, and dozens of moving parts.  
+    Starting as a backend developer can feel overwhelming — especially in enterprise environments that use frameworks like 
+    <strong>ABP</strong>, large databases, layered architecture, and automation workflows.  
     This roadmap gives junior developers a clear, practical path to grow from fundamentals to production-ready backend skills.
   </p>
 
+  <!-- 1 -->
   <h2>1. Master the Core of C#</h2>
   <p>Every strong backend career starts with solid C# fundamentals:</p>
   <ul>
@@ -58,6 +59,7 @@
     In ABP and .NET enterprise projects, clean architecture relies heavily on interfaces, services, and DI — so mastering these early makes development smoother.
   </p>
 
+  <!-- 2 -->
   <h2>2. Learn .NET Fundamentals</h2>
   <ul>
     <li>Building Web APIs</li>
@@ -72,6 +74,7 @@
     ABP builds on top of ASP.NET Core, so understanding Web API fundamentals helps you debug and extend ABP modules confidently.
   </p>
 
+  <!-- 3 -->
   <h2>3. EF Core & Database Skills</h2>
   <p>Key skills every junior needs:</p>
   <ul>
@@ -82,12 +85,7 @@
     <li>LINQ queries and performance awareness</li>
   </ul>
 
-  <h3>Why it matters</h3>
-  <p>
-    Most backend bugs come from database issues.  
-    Understanding EF Core well makes you faster and more reliable in production environments.
-  </p>
-
+  <!-- 4 -->
   <h2>4. ABP Framework — What to Learn</h2>
   <p>ABP has a learning curve, but these core concepts get you 80% of the way:</p>
   <ul>
@@ -95,14 +93,11 @@
     <li>Repositories & Unit of Work</li>
     <li>DDD Entities & Value Objects</li>
     <li>Application Services & DTO mapping</li>
-    <li>Business Rules & Validation</li>
+    <li>Business rules & Validation</li>
     <li>Background jobs & distributed events</li>
   </ul>
 
-  <h3>Why it matters</h3>
-  <p>ABP is used in many government-scale systems because it enforces clean structure and consistency.  
-     Mastering ABP makes you stand out as a backend engineer.</p>
-
+  <!-- 5 -->
   <h2>5. Clean Architecture Thinking</h2>
   <ul>
     <li>Keep business rules in the Domain</li>
@@ -112,6 +107,7 @@
     <li>Separate read/write operations (CQRS mindset is helpful)</li>
   </ul>
 
+  <!-- 6 -->
   <h2>6. Testing Basics</h2>
   <p>Start simple:</p>
   <ul>
@@ -120,7 +116,8 @@
     <li>Mocking repositories</li>
   </ul>
 
-  <h2>7. DevOps Skills to Grow Into</h2>
+  <!-- 7 -->
+  <h2>7. DevOps Awareness</h2>
   <ul>
     <li>Git fundamentals (branching, merging, PRs)</li>
     <li>CI/CD basics</li>
@@ -128,6 +125,7 @@
     <li>Monitoring & logs (Serilog, Elastic, etc.)</li>
   </ul>
 
+  <!-- 8 -->
   <h2>8. How to Practice & Improve</h2>
   <ul>
     <li>Build small APIs (Tasks, Notes, Bookings)</li>
@@ -136,6 +134,98 @@
     <li>Read clean code from open-source .NET projects</li>
   </ul>
 
+  <!-- 9 -->
+  <h2>9. Advanced Concepts to Master</h2>
+  <p>
+    As you grow from junior to mid-level and beyond, these areas help you think and work like a senior backend developer.
+  </p>
+
+  <h3>🧠 C# &amp; .NET Core</h3>
+  <ul>
+    <li>Async / Await, LINQ optimization, Dependency Injection</li>
+    <li>Value vs reference types</li>
+    <li>SOLID principles</li>
+    <li>Design patterns (Repository, Factory, Strategy, Specification)</li>
+  </ul>
+
+  <h3>⚙️ ABP Framework</h3>
+  <ul>
+    <li>Domain-Driven Design (DDD)</li>
+    <li>Entities, Value Objects, Repositories, Domain Events</li>
+    <li>Business rules and where to implement them</li>
+    <li>Unit of Work & transactions</li>
+    <li>DTOs and ObjectMapper</li>
+    <li>Background jobs & distributed events</li>
+    <li>Validation & exception handling</li>
+  </ul>
+
+  <h3>🧮 Entity Framework Core</h3>
+  <ul>
+    <li>Query tracking vs no-tracking</li>
+    <li>Avoiding N+1 queries</li>
+    <li>Indexes and smart migrations</li>
+  </ul>
+
+  <h3>🖥️ Angular (Full-Stack Awareness)</h3>
+  <ul>
+    <li>HttpClient, Observables, RxJS</li>
+    <li>Reactive forms and validation</li>
+    <li>Interceptors & API communication</li>
+  </ul>
+
+  <h3>🔐 Security & Best Practices</h3>
+  <ul>
+    <li>Preventing IDOR</li>
+    <li>JWT cycles (access + refresh)</li>
+    <li>Exception filters in ABP</li>
+    <li>Caching (Redis / Memory)</li>
+  </ul>
+
+  <!-- 10 -->
+  <h2>10. Teamwork & Professional Growth</h2>
+  <p>
+    Technical skills alone aren’t enough — real growth comes from how well you collaborate, communicate,
+    and contribute to the team. These skills transform a developer from “good” to “reliable and impactful.”
+  </p>
+
+  <h3>🤝 Collaboration</h3>
+  <ul>
+    <li>Share tasks openly and communicate progress.</li>
+    <li>Ask questions early instead of getting stuck.</li>
+    <li>Review code respectfully and explain feedback clearly.</li>
+  </ul>
+
+  <h3>🧩 Conflict Resolution</h3>
+  <ul>
+    <li>Discuss issues calmly and objectively.</li>
+    <li>Compromise when needed — the goal is the product, not ego.</li>
+    <li>Escalate only when truly necessary.</li>
+  </ul>
+
+  <h3>⏳ Task Prioritization</h3>
+  <ul>
+    <li>Understand urgency, impact, and deadlines.</li>
+    <li>Clarify requirements before coding.</li>
+    <li>Avoid over-engineering — ship value first.</li>
+  </ul>
+
+  <h3>🌱 Continuous Learning</h3>
+  <p>
+    Good engineers keep improving — not because they’re behind, but because technology never stops evolving.
+    Invest in yourself through:
+  </p>
+  <ul>
+    <li>Reading documentation and best practices</li>
+    <li>Learning new patterns & tools when relevant</li>
+    <li>Reflecting after each project (what went well / what didn’t)</li>
+  </ul>
+
+  <p>
+    Teams succeed when developers collaborate, communicate, and grow together —  
+    these soft skills matter just as much as technical ones.
+  </p>
+
+  <!-- Final -->
   <h2>Final Advice</h2>
   <p>
     Don’t try to learn everything at once.  
@@ -143,7 +233,7 @@
     Focus on understanding, not memorizing — and build real things.
   </p>
 
-  <p style="color: #94a3b8; margin-top: 18px;">
+  <p style="color:#94a3b8;margin-top:18px">
     This roadmap will continue evolving as I share more lessons from real-world .NET and ABP development.
   </p>
 
